@@ -1,7 +1,7 @@
 Summary:	A collection of plugins for markdown-it-py
 Name:		mdit-py-plugins
 Version:	0.3.3
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	MIT
 URL:		https://github.com/executablebooks/mdit-py-plugins
