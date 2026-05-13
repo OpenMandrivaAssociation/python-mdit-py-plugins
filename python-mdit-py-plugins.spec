@@ -1,24 +1,26 @@
+%define module mdit-py-plugins
+%define oname mdit_py_plugins
+
+Name:		python-mdit-py-plugins
 Summary:	A collection of plugins for markdown-it-py
-Name:		mdit-py-plugins
-Version:	0.5.0
+Version:	0.6.1
 Release:	1
 Group:		Development/Python
 License:	MIT
 URL:		https://github.com/executablebooks/mdit-py-plugins
-#Source0:	https://github.com/executablebooks/mdit-py-plugins/archive/%{version}/mdit-py-plugins-%{version}.tar.gz
-Source0:	https://pypi.io/packages/source/m/mdit-py-plugins/mdit_py_plugins-%{version}.tar.gz
-BuildSystem:	python
-BuildRequires:	python%{pyver}dist(pip)
-BuildRequires:	python%{pyver}dist(setuptools)
-BuildRequires:	python%{pyver}dist(wheel)
+Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
+# rename the package to match the repo
+%rename mdit-py-plugins
 
+BuildSystem:	python
 BuildArch:	noarch
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(flit-core)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 Collection of core plugins for markdown-it-py.
 
 %files
-%license LICENSE
-%doc README.md
-%{py_sitedir}/mdit_py_plugins
-%{py_sitedir}/mdit_py_plugins-*.*-info
+%{python_sitelib}/%{oname}
+%{python_sitelib}/%{oname}-%{version}.dist-info
